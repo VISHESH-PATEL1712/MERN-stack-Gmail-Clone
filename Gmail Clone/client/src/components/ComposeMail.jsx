@@ -1,7 +1,7 @@
 
 
-import { Dialog, Box, Typography, styled, InputBase, TextField } from '@mui/material';
-import { Close } from '@mui/icons-material';
+import { Dialog, Box, Typography, styled, InputBase, TextField, Button } from '@mui/material';
+import { Close, DeleteOutline} from '@mui/icons-material';
 
 const dialogStyle = {
         height: '90%',
@@ -32,7 +32,14 @@ const RecipientsWrapper = styled(Box) ({
         borderBottom: '1px solid #f5f5f5',
         marginTop:10
     }
+});
+
+const Footer = styled(Box) ({
+     display: 'flex',
+     justifyContent: 'space-between',
+     padding: '10px 15px'
 })
+
 
 
 const ComposeMail = () => {
@@ -47,11 +54,12 @@ const ComposeMail = () => {
                     <InputBase placeholder="Subject"/>
                 </RecipientsWrapper>
                 <TextField multiline 
-                           row={20}
+                           rows={20}
                            sx={{ '& .MuiOutlinedInput-notchedOutline  ': { border: 'none' }}} />
-                <Box>
-                    
-                </Box>
+                <Footer>
+                    <Button>Send</Button>
+                    <DeleteOutline />
+                </Footer>
             </Dialog>
     )
 }
